@@ -2,6 +2,8 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/da8ae6d3f2eb45e6b2daff1b67e4ee3a)](https://www.codacy.com/app/cperez26/06-app-agenda-cperez26?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=POO-2019-2K/06-app-agenda-cperez26&amp;utm_campaign=Badge_Grade)
 
+[![codebeat badge](https://codebeat.co/badges/fbf4ce44-8a4d-4973-99fa-f3036ded65fd)](https://codebeat.co/projects/github-com-poo-2019-2k-06-app-agenda-cperez26-master)
+
 ## Tiempo para realizar la actividad
 
 6 Horas
