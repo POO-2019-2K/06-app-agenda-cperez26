@@ -1,5 +1,7 @@
 # Ejercicio 6 La Agenda
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/da8ae6d3f2eb45e6b2daff1b67e4ee3a)](https://www.codacy.com/app/cperez26/06-app-agenda-cperez26?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=POO-2019-2K/06-app-agenda-cperez26&amp;utm_campaign=Badge_Grade)
+
 ## Tiempo para realizar la actividad
 
 6 Horas
