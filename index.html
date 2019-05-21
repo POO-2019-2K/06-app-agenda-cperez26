@@ -11,17 +11,21 @@
 <body>
     <div class="jumbotron">
         <h1>AGENDA</h1>
-        <p>Registro de personas</p>
+        <p>Registro de contactos</p>
     </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <div class="row my-4">Tabla 1</div>
+                <div class="row my-4">Registra tus contactos</div>
                 <table id="info">
                     <form class="col-22">
                         <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Juan Perez" />
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Carlos Perez" />
+                        </div>
+                        <div>
+                            <label for="direccion">Direccion</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="Camino Real #90"
                         </div>
                         <div>
                             <label for="email">Email</label>
@@ -31,15 +35,34 @@
                             <label for="birthday">Fecha de Nacimiento</label>
                             <input type="date" class="form-control" id="birthday" placeholder="">
                         </div>
-                        <button type="button" id="btnAdd" class="btn btn-primary">Agregar</button>
+                        <center>
+                            <button type="button" id="btnAdd" class="btn btn-primary">Agregar</button>    
+                        </center>
                         <div>
                     </form>
+                </table>
+            </div>
+            <div class="col-md-8">
+                <table id="agenda" class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Edad</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
     </div>
 
     <script src='./main.js' type="module"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
