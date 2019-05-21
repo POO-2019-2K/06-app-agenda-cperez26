@@ -1,7 +1,10 @@
 export default class Contactos{
-    constructor(nombre, birthday){
+    constructor(nombre, direccion, email, birthday){
         this._contactos = new Array();
-        this._birthday = birthday
+        this._nombre = nombre;
+        this._direccion = direccion;
+        this.__email = email;
+        this._birthday = birthday;
     }
 
     _actualizarContactos() {
@@ -21,6 +24,18 @@ export default class Contactos{
         localStorage.setItem("contactos", JSON.stringify(this._contactos));
     }
 
+    get nombre() {
+        return this._nombre;
+    }
+
+    get direccion() {
+        return this._direccion;
+    }
+
+    get email() {
+        return this.__email;
+    }
+
     getBirthdayAsString() {
         let d = this._birthday.getDate() + "/" + this._birthday.getMonth() + "/" + this._birthday.getFullYear();
 
@@ -30,7 +45,7 @@ export default class Contactos{
         return this._birthday;
     }
 
-    // returns employee age //
+    // returns contacto age //
     getAge() {
         let oneDay = 24 * 60 * 60 * 1000;
         let oneYear = oneDay * 365;
