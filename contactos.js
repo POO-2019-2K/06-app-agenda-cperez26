@@ -1,5 +1,5 @@
 export default class Contactos{
-    constructor(birthday){
+    constructor(nombre, birthday){
         this._contactos = new Array();
         this._birthday = birthday
     }
@@ -20,4 +20,21 @@ export default class Contactos{
         this._contactos.push(objContactos);
         localStorage.setItem("contactos", JSON.stringify(this._contactos));
     }
+
+    getBirthdayAsString() {
+        let d = this._birthday.getDate() + "/" + this._birthday.getMonth() + "/" + this._birthday.getFullYear();
+
+        return d;
+    }
+    get birthday() {
+        return this._birthday;
+    }
+
+    // returns employee age //
+    getAge() {
+        let oneDay = 24 * 60 * 60 * 1000;
+        let oneYear = oneDay * 365;
+        let differenceMs = Math.abs(new Date() - this._birthday);
+        return Math.round(differenceMs / oneYear);
+}
 }
