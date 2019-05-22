@@ -1,10 +1,10 @@
 .jumbotron {
     background-color: forestgreen;
     color:white;
-    
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
     background-color: darkseagreen;
-    
+    font-family: 'Indie Flower', cursive;
 }
