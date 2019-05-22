@@ -13,15 +13,15 @@ export default class Contactos{
         }
     }
 
-    getSaveContacts(){
-        this._actualizarContactos();
-        return this._contactos;
-    }
-
     saveContactos(objContactos){
         this._actualizarContactos();
         this._contactos.push(objContactos);
         localStorage.setItem("contactos", JSON.stringify(this._contactos));
+    }
+
+    get SaveContacts(){
+        this._actualizarContactos();
+        return this._contactos;
     }
 
     get nombre() {
@@ -36,13 +36,14 @@ export default class Contactos{
         return this.__email;
     }
 
+    get birthday() {
+        return this._birthday;
+    }
+
     getBirthdayAsString() {
         let d = this._birthday.getDate() + "/" + this._birthday.getMonth() + "/" + this._birthday.getFullYear();
 
         return d;
-    }
-    get birthday() {
-        return this._birthday;
     }
 
     // returns contacto age //
