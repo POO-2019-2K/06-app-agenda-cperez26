@@ -1,56 +1,29 @@
 export default class Contactos{
-    constructor(nombre, direccion, email, birthday){
-        this._contactos = new Array();
-        this._nombre = nombre;
-        this._direccion = direccion;
-        this.__email = email;
-        this._birthday = birthday;
-    }
-
-    _actualizarContactos() {
-        if (localStorage.getItem("contactos") != null) {
-            this._contactos = JSON.parse(localStorage.getItem("contactos"));
+        constructor(objectC){
+            this._nombre = objectC.nombre;
+            this._edad = objectC.edad;
+            this._telefono = objectC.telefono;
+            this._direccion = objectC.direccion;
+            this._email = objectContact.email;    
+        }
+        
+        get nombre(){
+            return this._nombre;
+        }
+    
+        get edad(){
+            return this._edad;
+        }
+    
+        get telefono(){
+            return this._telefono;
+        }
+    
+        get direccion(){
+            return this._direccion;
+        }
+    
+        get email(){
+            return this._email;
         }
     }
-
-    saveContactos(objContactos){
-        this._actualizarContactos();
-        this._contactos.push(objContactos);
-        localStorage.setItem("contactos", JSON.stringify(this._contactos));
-    }
-
-    get SaveContacts(){
-        this._actualizarContactos();
-        return this._contactos;
-    }
-
-    get nombre() {
-        return this._nombre;
-    }
-
-    get direccion() {
-        return this._direccion;
-    }
-
-    get email() {
-        return this.__email;
-    }
-
-    get birthday() {
-        return this._birthday;
-    }
-
-    getBirthdayAsString() {
-        let d = this._birthday.getDate() + "/" + this._birthday.getMonth() + "/" + this._birthday.getFullYear();
-
-        return d;
-    }
-
-    // returns contacto age //
-    getAge() {
-        let oneDay = 24 * 60 * 60 * 1000;
-        let oneYear = oneDay * 365;
-        let differenceMs = Math.abs(new Date() - this._birthday);
-        return Math.round(differenceMs / oneYear);
-}
-}
