@@ -14,13 +14,13 @@ export default class {
         return this._contactos;
     }
 
-    saveContact(objContact) {
+    guardarContacto(objContact) {
         this._updateArrayContacts();
         this._contactos.push(objContact);
         localStorage.setItem("contactos", JSON.stringify(this._contactos));
     }
 
-    deleteContact(email) {
+    borrarContacto(email) {
         this._updateArrayContacts();
         this._contactos.forEach((objectC, index) => {
             if (objectC.email === email) {
@@ -31,7 +31,7 @@ export default class {
         });
     }
 
-    isContactRegistered(email) {
+    contactoRegistrado(email) {
         let registrado = false;
         this._contactos.forEach((objContact) => {
             if (objContact.email === email) {
@@ -43,7 +43,7 @@ export default class {
         return registrado;
     }
 
-    sortByName() {
+    ordenarPorNombre() {
         this._contactos.sort(function (a, b) {
             if (a.name > b.name) {
                 return 1;
@@ -51,15 +51,15 @@ export default class {
                 return -1;
             }
         });
-        //Save in local Storange
+        
         localStorage.setItem('contactos', JSON.stringify(this._contactos));
     }
 
-    sortByAge() {
+    ordenarPorEdad() {
         this._contactos.sort(function (a, b) {
             return (a.age - b.age)
         })
-        //Save in local Storange
+
         localStorage.setItem('contactos', JSON.stringify(this._contactos));
     }
 }

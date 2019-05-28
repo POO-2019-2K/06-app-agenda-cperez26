@@ -37,7 +37,7 @@ export default class Tabla {
         btnDelete.className = "btn btn-danger";
 
         btnDelete.addEventListener('click', () => {
-            this._contactos.deleteContacto(objC.email);
+            this._contactos.borrarContacto(objC.email);
             this.update(this._contactos.getContactsSaved());
         });
         
@@ -45,13 +45,13 @@ export default class Tabla {
         cell.appendChild(btnDelete);
     }
 
-    sortByName() {
-        this._contactos.sortByName();
+    ordenarPorNombre() {
+        this._contactos.ordenarPorNombre();
         this.update(this._contactos.getContactsSaved());
     }
 
-    sortByAge() {
-        this._contactos.sortByAge();
+    ordenarPorEdad() {
+        this._contactos.ordenarPorEdad();
         this.update(this._contactos.getContactsSaved());
     }
 }

@@ -3,21 +3,17 @@ import Contactos from "./contactos.js";
 
 export default class Main {
     constructor() {
-        //localStorage.removeItem('contacts');
+        
         this._contactos = new Contactos();
         this._tabla = new Tabla(document.querySelector("#table"), this._contactos);
-        //Update table
         this._tabla.update(this._contactos.getContactsSaved());
     }
 
     activeListenners() {
         document.querySelector("#btnAdd").addEventListener("click", () => {
             if (document.querySelector("#form").checkValidity()) {
-                //Doesn't exist this contact?
-                if (!this._contactos.isContactRegistered(document.querySelector("#email").value)) {
-                    //Create and save contact
-                    this._contactos.saveContact(this._createObjectContact());
-                    //Update table
+                if (!this._contactos.contactoRegistrado(document.querySelector("#email").value)) {
+                    this._contactos.guardarContacto(this._createObjectContact());
                     this._tabla.update(this._contactos.getContactsSaved());
                 }else{
                     swal.fire({
@@ -37,9 +33,9 @@ export default class Main {
 
         document.querySelector('#sort').addEventListener('change', () => {
             if(document.querySelector('#sort').value === 'name'){
-                this._tabla.sortByName();
+                this._tabla.ordenarPorNombre();
             }else{
-                this._tabla.sortByAge();
+                this._tabla.ordenarPorEdad();
             }
         });
     }
