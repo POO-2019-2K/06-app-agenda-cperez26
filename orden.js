@@ -3,47 +3,51 @@ export default class {
         this._contactos = new Array();
     }
 
-    _updateArrayContacts() {
+    guardarContactos(objContact) {
+
+        this._actualizarContactos();
+        this._contactos.push(objContact);
+
+        localStorage.setItem("contactos", JSON.stringify(this._contactos));
+    }
+    
+    mostrarContactosGuardados() {
+        this._actualizarContactos();
+        return this._contactos;
+    }
+    
+    _actualizarContactos() {
         if (localStorage.getItem("contactos") != null) {
             this._contactos = JSON.parse(localStorage.getItem("contactos"));
         }
     }
 
-    getContactsSaved() {
-        this._updateArrayContacts();
-        return this._contactos;
-    }
+    borrarContactos(email) {
 
-    guardarContacto(objContact) {
-        this._updateArrayContacts();
-        this._contactos.push(objContact);
-        localStorage.setItem("contactos", JSON.stringify(this._contactos));
-    }
-
-    borrarContacto(email) {
-        this._updateArrayContacts();
-        this._contactos.forEach((objectC, index) => {
-            if (objectC.email === email) {
+        this._actualizarContactos();
+        this._contactos.forEach((objectContact, index) => {
+            if (objectContact.email === email) {
                 this._contactos.splice(index, 1);
-                localStorage.setItem('contactos', JSON.stringify(this._contactos));
+
+                localStorage.setItem("contactos", JSON.stringify(this._contactos));
                 return;
             }
         });
     }
 
-    contactoRegistrado(email) {
-        let registrado = false;
+    conyactoRegistrado(email) {
+        let registered = false;
         this._contactos.forEach((objContact) => {
             if (objContact.email === email) {
-                registrado = true;
+                registered = true;
                 return;
             }
         });
 
-        return registrado;
+        return registered;
     }
 
-    ordenarPorNombre() {
+    OrdenarPorNombre() {
         this._contactos.sort(function (a, b) {
             if (a.name > b.name) {
                 return 1;
@@ -51,15 +55,15 @@ export default class {
                 return -1;
             }
         });
-        
-        localStorage.setItem('contactos', JSON.stringify(this._contactos));
+
+        localStorage.setItem("contactos", JSON.stringify(this._contactos));
     }
 
-    ordenarPorEdad() {
+    odenarPorEdad() {
         this._contactos.sort(function (a, b) {
-            return (a.age - b.age)
-        })
+            return (a.age - b.age);
+        });
 
-        localStorage.setItem('contactos', JSON.stringify(this._contactos));
+        localStorage.setItem("contactos", JSON.stringify(this._contactos));
     }
 }

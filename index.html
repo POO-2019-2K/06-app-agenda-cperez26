@@ -25,6 +25,10 @@
                             <input type="text" class="form-control" id="nombre" placeholder="Carlos Perez" />
                         </div>
                         <div>
+                            <label for="edad">Edad</label>
+                            <input type="number" class="form-control" id="edad" placeholder="00"
+                        </div>
+                        <div>
                             <label for="direccion">Dirección</label>
                             <input type="text" class="form-control" id="direccion" placeholder="Camino Real #90"
                         </div>
@@ -35,10 +39,6 @@
                         <div>
                             <label for="telefono">Telefono</label>
                             <input type="number" class="form-control" id="telefono" placeholder="3131596305"
-                        </div>
-                        <div>
-                            <label for="birthday">Fecha de Nacimiento</label>
-                            <input type="date" class="form-control" id="birthday" placeholder="">
                         </div>
                         <center>
                             <button type="button" id="btnAdd" class="btn btn-primary">AGREGAR</button>    
@@ -52,10 +52,10 @@
                     <tbody>
                         <tr>
                             <td colspan="1" class="sub-header">
-                                <label for="sort">Ordenar por:</label>
+                                <label for="ordenar">Ordenar por:</label>
                             </td>
                             <td colspan="1" class="sub-header">
-                                <select id="sort" class="form-control">
+                                <select id="ordenar1" class="form-control">
                                     <option value="name">Nombre</option>
                                     <option value="age">Edad</option>
                                 </select>
